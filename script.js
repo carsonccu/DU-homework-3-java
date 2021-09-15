@@ -5,11 +5,25 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var num = "0123456789";
 var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var passlength="";
+var passwordarr= [];
 
 var lowerconfirm=[];
 var upperconfirm=[];
 var numconfirm=[];
 var specialcharconfirm=[];
+
+var arrayforall= function() {
+  if (lowerconfirm) {
+    passwordarr = passwordarr.concat(lowercase);
+  if (lowerconfirm) {
+    passwordarr = passwordarr.concat(lowercase);
+  if (lowerconfirm) {
+    passwordarr = passwordarr.concat(lowercase);
+  if (lowerconfirm) {
+    passwordarr = passwordarr.concat(lowercase);
+  }
+return passwordarr;
+};
 
 
 

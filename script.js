@@ -15,8 +15,8 @@ var specialCharli = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 // Write password to the #password input
 function generatePassword(){
 
-  var passwordarray=[];
-  var charAvail = "";
+  var array=[];
+  var char = "";
   var passLength;
   var uppercase;
   var lowercase;
@@ -44,17 +44,17 @@ function generatePassword(){
   }
 
 stuff();
-if (lowercase){ charAvail += lowerCaseli};
-if (uppercase){charAvail += upperCaseli};
-if (number){charAvail += numli};
-if (specialchar){charAvail += specialCharli};
+if (lowercase){ char += lowerCaseli};
+if (uppercase){char += upperCaseli};
+if (number){char += numli};
+if (specialchar){char += specialCharli};
   
 for (i=0;i<passlength;i++){
-  passwordarray[i] = charAvail.charAt(Math.floor(Math.random()* charAvail.length));
+  array[i] = char.charAt(Math.floor(Math.random()* char.length));
 }
 
-passwordarray = passwordarray.join(" ");
-return passwordarray;
+array = array.join(" ");
+return array;
 
     
 function writePassword() {

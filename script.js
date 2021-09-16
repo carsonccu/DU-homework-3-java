@@ -1,54 +1,59 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var num = "0123456789";
-var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-var passlength="";
-var passwordarr= [];
+var upperCaseli = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCaseli = "abcdefghijklmnopqrstuvwxyz";
+var numli = "0123456789";
+var specialCharli = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+// var passlength="";
+// var passwordarr= [];
 
-var lowerconfirm=[];
-var upperconfirm=[];
-var numconfirm=[];
-var specialcharconfirm=[];
-
-var arrayforall= function() {
-  if (lowerconfirm) {
-    passwordarr = passwordarr.concat(lowercase);
-  if (lowerconfirm) {
-    passwordarr = passwordarr.concat(lowercase);
-  if (lowerconfirm) {
-    passwordarr = passwordarr.concat(lowercase);
-  if (lowerconfirm) {
-    passwordarr = passwordarr.concat(lowercase);
-  }
-return passwordarr;
-};
+// var lowerconfirm=[];
+// var upperconfirm=[];
+// var numconfirm=[];
+// var specialcharconfirm=[];
 
 
 
 // Write password to the #password input
 function generatePassword(){
-  
+
+  // var passwordarr=[];
+  var charAvail = "";
+  var passLength;
+  var uppercase;
+  var lowercase;
+  var number;
+  var specialchar;
+
   function criteria() {
   passlength = prompt("How many Characters would you like in your password?");{
-    if (passlength<8 || passlength >128) {
+    if (passLength<8 || passLength >128) {
       alert("password does not match criteria min 8: max: 128");}
       criteria();
   }};
   criteria();
 
   function stuff(){
-    lowerconfirm= confirm("Do you want lower case characters?");
-    upperconfirm= confirm("Do you want upper case charracters");
-    numconfirm= confirm("Do you want numbers?");
-    specialconfirm= confirm("Do you want special characters?");
-    if(!lowercase && !uppercase && !num && !specialChar){
+    lowercase= confirm("Do you want lower case characters?");
+    uppercase= confirm("Do you want upper case charracters");
+    number= confirm("Do you want numbers?");
+    specialchar= confirm("Do you want special characters?");
+    if(!lowercase && !uppercase && !number && !specialChar){
       alert("Please choose one");
       stuff();
     }};
     stuff();
   }
+
+stuff();
+if (lowercase){ charAvail += lowerCaseli};
+if (uppercase){charAvail += upperCaseli};
+if (number){charAvail += numli};
+if (specialchar){charAvail += specialCharli};
+  
+for (i=0;i<passlength;i++){
+  passwordarray[i] = charAvail.charAt(Math.floor(Math.random()* charAvail.length));
+}
 
 
     
@@ -65,5 +70,3 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-

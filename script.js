@@ -27,18 +27,16 @@ var passwordarray = function(){
   }
   return passwordarr;
   };
+function random(){
+  return passwordarray[Math.floor(Math.random() * passwordarray.length)];
+};
 
 // Write password to the #password input
 function generatePassword(){
-  function criteria() {
   passlength = prompt("How many Characters would you like in your password?");{
     if (passLength<8 || passLength >128) {
       alert("password does not match criteria min 8: max: 128");}
-      criteria();
-  }};
-  criteria();
-// created folling confirms that should pop up and ok or cancel will add/omit to my pass
-  function criteria(){
+  
     lowerconfirm= confirm("Do you want lower case characters?");
     upperconfirm= confirm("Do you want upper case charracters");
     numconfirm= confirm("Do you want numbers?");

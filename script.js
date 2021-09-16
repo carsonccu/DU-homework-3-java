@@ -37,10 +37,10 @@ function generatePassword(){
   criteria();
 // created folling confirms that should pop up and ok or cancel will add/omit to my pass
   function criteria(){
-    lowercase= confirm("Do you want lower case characters?");
-    uppercase= confirm("Do you want upper case charracters");
-    number= confirm("Do you want numbers?");
-    specialchar= confirm("Do you want special characters?");
+    lowerconfirm= confirm("Do you want lower case characters?");
+    upperconfirm= confirm("Do you want upper case charracters");
+    numconfirm= confirm("Do you want numbers?");
+    specialcharconfirm= confirm("Do you want special characters?");
     if(!lowercase && !uppercase && !number && !specialChar){
       alert("Please choose one");
       criteria();

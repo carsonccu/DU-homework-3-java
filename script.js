@@ -28,11 +28,13 @@ var passwordarray = function(){
   }
   return passwordarr;
   };
+  // this code still isn't correct
 function random(){
   return passwordarray[Math.floor(Math.random() * passwordarray.length)];
 };
 generateBtn.addEventListener("click", writePassword);
-// Write password to the #password input
+// had to had the generate button up here
+// Main password code creating first a prompt followed by the other criteria that can be confirmed
 function generatePassword(){
   var pass="";
   passlength = prompt("How many characters do you want in your password");
@@ -54,6 +56,7 @@ function generatePassword(){
 
     passwordarr()
     for (i=0;i<=length;i++){
+      // this code still isn't correct
       password= password.concat(random(passwordarr));
     }
     return password;

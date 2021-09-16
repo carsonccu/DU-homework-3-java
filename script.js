@@ -30,13 +30,13 @@ var passwordarray = function(){
 function random(){
   return passwordarray[Math.floor(Math.random() * passwordarray.length)];
 };
-
+generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function generatePassword(){
   passlength = prompt("How many Characters would you like in your password?");{
     if (passLength<8 || passLength >128) {
       alert("password does not match criteria min 8: max: 128");}
-  
+    else 
     lowerconfirm= confirm("Do you want lower case characters?");
     upperconfirm= confirm("Do you want upper case charracters");
     numconfirm= confirm("Do you want numbers?");
@@ -57,7 +57,7 @@ function writePassword() {
   passwordText.value = password;
 
 
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 }
 
 

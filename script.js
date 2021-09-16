@@ -12,7 +12,7 @@ var upperconfirm=[];
 var numconfirm=[];
 var specialcharconfirm=[];
 
-var passwordarray = function();
+var passwordarray = function(){
   if (upperconfirm) {
     passswordarr = passwordarr.concat(upperCaseli);
   }
@@ -25,6 +25,8 @@ var passwordarray = function();
   if (specialcharconfirm) {
     passswordarr = passwordarr.concat(specialCharli);
   }
+  return passwordarr;
+  };
 
 // Write password to the #password input
 function generatePassword(){

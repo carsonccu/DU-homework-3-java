@@ -34,21 +34,30 @@ function random(){
 generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function generatePassword(){
-  var passlength =prompt("How many Characters would you like in your password?");{
-    if (passLength<8 || passLength >128) {
-      alert("password does not match criteria min 8: max: 128");}
-    else 
+  var pass="";
+  passlength = prompt("How many characters do you want in your password");
+  if (!passlength){
+    alert("please enter a length")
+    return
+  } if (passlength>128 || passlength<8) {
+    pass+= pass.concat(length);
+    return;
+  }
     upperconfirm= confirm("Do you want lower case characters?");
     lowerconfirm= confirm("Do you want upper case charracters");
     numconfirm= confirm("Do you want numbers?");
     specialcharconfirm= confirm("Do you want special characters?");
-    if(!lowercase && !uppercase && !number && !specialChar){
+    if(!lowerconfirm && !upperconfirm && !numconfirm && !specialcharconfirm){
       alert("Please choose one");
-      generatePassword();
-    }};
-    generatePassword();
-  }
+      return;
+    }
 
+    passwordarr()
+    for (i=0;i<=length;i++){
+      password= password.concat(random(passwordarr));
+    }
+    return password;
+  };
 
     
 function writePassword() {
@@ -60,3 +69,4 @@ function writePassword() {
 
 // generateBtn.addEventListener("click", writePassword);
 }
+    

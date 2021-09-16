@@ -12,8 +12,6 @@ var specialCharli = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 // var numconfirm=[];
 // var specialcharconfirm=[];
 
-
-generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function generatePassword(){
 
@@ -55,7 +53,7 @@ for (i=0;i<passlength;i++){
   passwordarray[i] = charAvail.charAt(Math.floor(Math.random()* charAvail.length));
 }
 
-passwordarray = passwordarray.join("");
+passwordarray = passwordarray.join(" ");
 return passwordarray;
 
     
@@ -64,5 +62,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-}
 
+
+generateBtn.addEventListener("click", writePassword);
+}

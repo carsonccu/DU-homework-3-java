@@ -29,8 +29,8 @@ var passwordarray = function () {
   return passwordarr;
 };
 
-function random(array) {
-  return array[Math.floor(Math.random() * array.length)];
+function random(passwordarr) {
+  return passwordarr[Math.floor(Math.random() * passwordarr.length)];
 };
 // Main password code creating first a prompt followed by the other criteria that can be confirmed
 function generatePassword() {
@@ -61,7 +61,7 @@ function generatePassword() {
 
 
 function writePassword() {
-  var finalpassword = generatePassword();
+  finalpassword = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = finalpassword;
 }

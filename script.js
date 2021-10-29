@@ -8,25 +8,24 @@ var finalpassword = "";
 var passwordarr = [];
 var passlength = "";
 
-var lowerconfirm = [];
-var upperconfirm = [];
-var numconfirm = [];
-var specialcharconfirm = [];
+var lowerconfirm;
+var upperconfirm;
+var numconfirm;
+var specialcharconfirm;
 
 var passwordarray = function () {
   if (upperconfirm) {
-    passswordarr = passwordarr.concat(upperCaseli);
+    passwordarr = passwordarr.concat(upperCaseli);
   }
   if (lowerconfirm) {
-    passswordarr = passwordarr.concat(lowerCaseli);
+    passwordarr = passwordarr.concat(lowerCaseli);
   }
   if (numconfirm) {
-    passswordarr = passwordarr.concat(numli);
+    passwordarr = passwordarr.concat(numli);
   }
   if (specialcharconfirm) {
-    passswordarr = passwordarr.concat(specialCharli);
+    passwordarr = passwordarr.concat(specialCharli);
   }
-  return passwordarr;
 };
 
 function random(passwordarr) {
@@ -34,14 +33,21 @@ function random(passwordarr) {
 };
 // Main password code creating first a prompt followed by the other criteria that can be confirmed
 function generatePassword() {
-  var pass = "";
+  // var pass = "";
   passlength = prompt("How many characters do you want in your password");
-  if (!passlength) {
-    alert("please enter a length")
-    return
-  } if (passlength > 128 || passlength < 8) {
-    pass += pass.concat(length);
+  console.log(passlength);
+  if (passlength === null) {
     return;
+  }
+  passlength = parseInt(passlength);
+
+  if (!passlength || isNaN(passlength)) {
+    alert("please enter a length")
+    return generatePassword();
+  } if (passlength > 128 || passlength < 8) {
+    alert("Please enter a number within 8 and 128")
+    // pass += pass.concat(length);
+    return generatePassword();
   }
   upperconfirm = confirm("Do you want lower case characters?");
   lowerconfirm = confirm("Do you want upper case charracters");
@@ -49,19 +55,28 @@ function generatePassword() {
   specialcharconfirm = confirm("Do you want special characters?");
   if (!lowerconfirm && !upperconfirm && !numconfirm && !specialcharconfirm) {
     alert("Please choose one");
-    return;
+    return generatePassword();
   }
 
   passwordarray()
-  for (i = 0; i <= length; i++) {
-    finalpassword = finalpassword.concat(random(passwordarr));
+  console.log(passwordarr)
+  for (i = 0; i < passlength; i++) {
+    let char = random(passwordarr)
+    console.log(char)
+    finalpassword += char;
+    console.log(finalpassword)
   }
-  return finalpassword;
+  // return (finalpassword)
 };
 
 
 function writePassword() {
-  finalpassword = generatePassword();
+  // finalpassword = generatePassword();
+  generatePassword()
+  console.log(finalpassword)
+  if (!finalpassword) {
+    return;
+  }
   var passwordText = document.querySelector("#password");
   passwordText.value = finalpassword;
 }
